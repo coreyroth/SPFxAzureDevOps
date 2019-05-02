@@ -1,0 +1,23 @@
+{
+  "@pnp/generator-spfx": {
+    "framework": "react",
+    "pnpFramework": "reactjs.plus",
+    "pnp-libraries": [],
+    "pnp-ci": [
+      "azure"
+    ],
+    "pnp-vetting": [],
+    "spfxenv": "spo"
+  },
+  "@microsoft/generator-sharepoint": {
+    "environment": "spo",
+    "framework": "react",
+    "isCreatingSolution": true,
+    "version": "1.8.1",
+    "libraryName": "azure-dev-ops",
+    "libraryId": "00c01a10-376b-4cd4-8c0c-eed4ae2592d4",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
