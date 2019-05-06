@@ -1,3 +1,9 @@
+[CmdletBinding()]
+param ([Parameter(Mandatory)][SecureString]$username, [Parameter()][String]$password)
+
+Write-Host "Username - " $username
+Write-Host "Password - " $password
+
 Install-PackageProvider -Name NuGet -Force -Scope "CurrentUser"
 Install-Module SharePointPnPPowerShellOnline -Scope "CurrentUser" -Verbose -Force
 

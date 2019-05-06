@@ -32,6 +32,7 @@ steps:
     targets: test
     publishJUnitResults: true
     testResultsFiles: '**/test-*.xml'
+    
 #publish test results
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish Code Coverage Results $(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml'
@@ -62,6 +63,13 @@ steps:
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)/drop'
   inputs:
     Contents: '**\*.sppkg'
+    TargetFolder: '$(build.artifactstagingdirectory)/drop'
+
+#copy deploysment script to artifact repository
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)/drop'
+  inputs:
+    Contents: '**\DeployPackage.ps1'
     TargetFolder: '$(build.artifactstagingdirectory)/drop'
 
 #publish artifacts
