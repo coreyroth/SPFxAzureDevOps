@@ -5,7 +5,7 @@ Write-Host "Username - " $username
 Write-Host "Password - " $password
 
 if ($password) { Write-Host "Password stored." }
-if (!$password) { Write-Host "Password stored." } 
+if (!$password) { Write-Host "Password not stored." } 
 
 Install-PackageProvider -Name NuGet -Force -Scope "CurrentUser"
 Install-Module SharePointPnPPowerShellOnline -Scope "CurrentUser" -Verbose -Force
