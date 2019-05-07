@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param ([Parameter(Mandatory)][String]$username, [Parameter()][String]$password)
+param ([Parameter(Mandatory)][SecureString]$username, [Parameter()][SecureString]$password)
 
 if ($password) { Write-Host "Password stored." }
 if (!$password) { Write-Host "Password not stored." } 
