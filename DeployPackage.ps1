@@ -1,11 +1,11 @@
 [CmdletBinding()]
 param ([Parameter(Mandatory)][SecureString]$username, [Parameter()][SecureString]$password)
 
-Write-Host "Username - " $username
-Write-Host "Password - " $password
-
 if ($password) { Write-Host "Password stored." }
 if (!$password) { Write-Host "Password not stored." } 
+
+Write-Host "Username - " $username
+Write-Host "Password - " $password
 
 Install-PackageProvider -Name NuGet -Force -Scope "CurrentUser"
 Install-Module SharePointPnPPowerShellOnline -Scope "CurrentUser" -Verbose -Force
