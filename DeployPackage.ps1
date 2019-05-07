@@ -10,7 +10,8 @@ Write-Host "Password - " $password
 Install-PackageProvider -Name NuGet -Force -Scope "CurrentUser"
 Install-Module SharePointPnPPowerShellOnline -Scope "CurrentUser" -Verbose -Force
 
-$sp = $password | ConvertTo-SecureString -AsPlainText -Force
+# $sp = $password | ConvertTo-SecureString -AsPlainText -Force
+$sp = $password
 $plainCred = New-Object system.management.automation.pscredential -ArgumentList $username, $sp
 
 Connect-PnPOnline -Url $env:siteUrl -Credentials $plainCred
