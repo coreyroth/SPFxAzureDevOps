@@ -1,4 +1,4 @@
-param ([Parameter(Mandatory)][SecureString]$username, [Parameter()][SecureString]$password)
+param ([Parameter(Mandatory)]$username, [Parameter()]$password)
 
 if ($password) { Write-Host "Password stored." }
 if (!$password) { Write-Host "Password not stored." } 
