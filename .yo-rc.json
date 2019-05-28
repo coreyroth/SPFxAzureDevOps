@@ -13,7 +13,7 @@
     "environment": "spo",
     "framework": "react",
     "isCreatingSolution": true,
-    "version": "1.8.1",
+    "version": "1.8.2",
     "libraryName": "azure-dev-ops",
     "libraryId": "00c01a10-376b-4cd4-8c0c-eed4ae2592d4",
     "packageManager": "npm",
