@@ -1,13 +1,11 @@
 resources:
 - repo: self
+
 trigger:
 - master
-- develop
-queue:
-  name: Hosted VS2017
-  demands:
-  - npm
-  - node.js
+
+pool:
+  vmImage: 'ubuntu-latest'
 
 steps:
 #install node 8.x
@@ -58,18 +56,14 @@ steps:
     targets: 'package-solution'
     arguments: '--ship'
 
-#copy files to artifact repository
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)/drop'
-  inputs:
-    Contents: '**\*.sppkg'
-    TargetFolder: '$(build.artifactstagingdirectory)/drop'
-
 #copy deploysment script to artifact repository
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)/drop'
   inputs:
-    Contents: '**\DeployPackage.ps1'
+    Contents: | 
+      sharepoint/solution/*.sppkg
+      *.ps1
+      *.pfx
     TargetFolder: '$(build.artifactstagingdirectory)/drop'
 
 #publish artifacts
