@@ -1,7 +1,4 @@
-param ([Parameter()]$password)
-
-Install-PackageProvider -Name NuGet -Force -Scope "CurrentUser"
-Install-Module SharePointPnPPowerShellOnline -Scope "CurrentUser" -Verbose -Force
+Install-Module -Name "PnP.PowerShell" -AllowPrerelease -Force
 
 if ($env:environment -eq "production") {
     $siteUrl = $env:productionSiteUrl
@@ -12,10 +9,8 @@ else {
 
 Write-Host "SiteUrl - " $siteUrl
 
-$sp = $password | ConvertTo-SecureString -AsPlainText -Force
-$plainCred = New-Object system.management.automation.pscredential -ArgumentList $env:username, $sp
+$certificatePath = "./" + $env:dropPath + "/drop/" + $env:certificateFilename
+Connect-PnPOnline -url $siteUrl -clientId $env:clientId -Tenant $env:tenant -CertificatePath $certificatePath 
 
-Connect-PnPOnline -Url $siteUrl -Credentials $plainCred
-
-$packagePath =  "./" + $env:dropPath + "/drop/sharepoint/solution/" + $env:packageName
+$packagePath =  "./" + $env:dropPath + "/drop/" + $env:packageName
 Add-PnPApp $packagePath -Scope Site -Overwrite -Publish
