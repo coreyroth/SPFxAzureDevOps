@@ -5,7 +5,14 @@
     "id": "00c01a10-376b-4cd4-8c0c-eed4ae2592d4",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
-    "isDomainIsolated": false
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Corey Roth",
+      "privacyUrl": "https://github.com/coreyroth/SPFxAzureDevOps",
+      "termsOfUseUrl": "https://github.com/coreyroth/SPFxAzureDevOps",
+      "websiteUrl": "https://github.com/coreyroth/SPFxAzureDevOps",
+      "mpnId": "000000"
+    }
   },
   "paths": {
     "zippedPackage": "solution/azure-dev-ops.sppkg"
