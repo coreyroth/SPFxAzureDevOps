@@ -31,5 +31,3 @@ obj
 # Styles Generated Code
 *.scss.ts
 
-# don't publish pfx files to github
-*.pfx
