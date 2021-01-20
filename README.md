@@ -5,8 +5,8 @@ This is a sample project used to demonstrate CI / CD with Azure DevOps.
 Read more in the blog post
 https://coreyroth.com/2019/05/06/how-to-setup-ci-cd-in-azure-devops-with-the-help-of-spfx-generator/
 
-Updated 5/8
-Included new user of Secret Variables for password and an environment toggle for test and production.  
+Updated 1/20/2021
+Switched to PnP.PowerShell package and switch to certificate authentication.
 
 ### Building the code
 
